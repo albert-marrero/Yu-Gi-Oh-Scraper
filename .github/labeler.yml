@@ -6,3 +6,12 @@ db yugioghcard:
 
 scrapy:
 - any: ['yugioh_scraper/**/*', '!yugioh_scraper/spiders/*']
+
+workflows:
+- .github/workflows/*
+
+labeler workflow:
+- .github/labeler.yml
+
+issue templates:
+- .github/ISSUE_TEMPLATE/*
