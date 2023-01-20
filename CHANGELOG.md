@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Workflow to label pull requests based on the files changed.
 - Console Script Command for Yu-Gi-Oh Card Database.
+- Invalid character for file creation for db_yugiohcard spider
 
 ## [0.1.0] - 2023-01-20
 
