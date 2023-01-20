@@ -1,0 +1,17 @@
+python package:
+- pyproject.toml
+
+db yugioghcard:
+- yugioh_scraper/spiders/db_yugioh_card.py
+
+scrapy:
+- any: ['yugioh_scraper/**/*', '!yugioh_scraper/spiders/*']
+
+workflows:
+- .github/workflows/*
+
+labeler workflow:
+- .github/labeler.yml
+
+issue templates:
+- .github/ISSUE_TEMPLATE/*

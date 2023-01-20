@@ -4,7 +4,7 @@ from scrapy.crawler import CrawlerProcess
 from yugioh_scraper.spiders.db_yugioh_card import DBYugiohCardSpider
 
 UTC_DATETIME = datetime.now(timezone.utc)
-UTC_ISO_DATE = UTC_DATETIME.isoformat()
+UTC_FILE_FORMATTED = UTC_DATETIME.strftime("%Y-%m-%d")
 
 
 def main():
@@ -48,7 +48,7 @@ def db_yugioghcard():
     process = CrawlerProcess(
         settings={
             "FEEDS": {
-                f"{path}/{UTC_ISO_DATE}.json": {"format": "json"},
+                f"{path}/{UTC_FILE_FORMATTED}.json": {"format": "json"},
             },
         }
     )

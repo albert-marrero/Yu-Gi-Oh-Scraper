@@ -17,7 +17,7 @@ name = "yugioh-scraper"  # Required
 #
 # For a discussion on single-sourcing the version, see
 # https://packaging.python.org/guides/single-sourcing-package-version/
-version = "0.1.0"  # Required
+version = "0.1.1"  # Required
 
 # This is a one-line description or tagline of what your project does. This
 # corresponds to the "Summary" metadata field:
@@ -136,7 +136,7 @@ dependencies = [ # Optional
 # which executes the function `main` from this package when invoked.
 [project.scripts]  # Optional
 yugioh_scraper = "yugioh_scraper:main"
-db_yugioghcard = "yugioh_scraper:db_yugioghcard"
+db_yugiohcard = "yugioh_scraper:db_yugioghcard"
 
 # This is configuration specific to the `setuptools` build backend.
 # If you are using a different build backend, you will need to change this.
