@@ -79,11 +79,6 @@ python -m pip install -r requirements.txt
 * [Black](https://black.readthedocs.io/en/stable/) - An uncompromising Python code formatter
 * [Scrapy](https://docs.scrapy.org/en/2.7/) - A fast high-level web crawling and web scraping framework
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
 We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
