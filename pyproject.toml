@@ -126,7 +126,7 @@ dependencies = [ # Optional
 # maintainers, and where to support the project financially. The key is
 # what's used to render the link text on PyPI.
 [project.urls]  # Optional
-"Homepage" = "https://github.com/albert-marrero/Yu-Gi-Oh-Scrapers"
+"Homepage" = "https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/wiki"
 "Bug Reports" = "https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/issues"
 # "Funding" = "https://donate.pypi.org"
 # "Say Thanks!" = "http://saythanks.io/to/example"
