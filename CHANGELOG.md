@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2023-01-25
+
+### Added
+
+- Project Wiki
+
 ### Fixed
 
 - Broken contributors link.
@@ -47,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - A scraper that crawls the Yu-Gi-Oh! Database to extract product and card details.
 
 [unreleased]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1.1...HEAD
+[0.1.2]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1-alpha.0...0.1.0
 [0.1-alpha.0]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/releases/tag/0.1-alpha.0
