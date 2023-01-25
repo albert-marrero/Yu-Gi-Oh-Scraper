@@ -1,6 +1,7 @@
 import os
 from datetime import datetime, timezone
 from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
 from yugioh_scraper.spiders.db_yugioh_card import DBYugiohCardSpider
 
 UTC_DATETIME = datetime.now(timezone.utc)
@@ -13,6 +14,7 @@ def main():
 
 
 def db_yugioghcard():
+    """Entry point for the db_yugioghcard spider"""
     # os.makedirs() method will raise
     # an OSError if the directory
     # to be created already exists
@@ -44,13 +46,15 @@ def db_yugioghcard():
     # due to other error like
     # invalid path name
 
-    """Entry point for the db_yugioghcard spider"""
-    process = CrawlerProcess(
-        settings={
-            "FEEDS": {
-                f"{path}/{UTC_FILE_FORMATTED}.json": {"format": "json"},
-            },
-        }
-    )
-    process.crawl(DBYugiohCardSpider)
-    process.start()
+    # set up settings
+    settings = get_project_settings()
+    settings["FEEDS"] = {
+        f"{path}/{UTC_FILE_FORMATTED}.json": {"format": "json"},
+    }
+
+    # set up crawler
+    crawler = CrawlerProcess(settings)
+    crawler.crawl(DBYugiohCardSpider)
+
+    # start crawling
+    crawler.start()
