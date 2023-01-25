@@ -3,51 +3,13 @@
 <p align="center">
     <a href="https://docs.python.org/release/3.11.0/"><img src="https://img.shields.io/github/pipenv/locked/python-version/albert-marrero/Yu-Gi-Oh-Scraper"></a>
     <a href="https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/albert-marrero/Yu-Gi-Oh-Scraper"></a>
+    <a href="https://pypi.org/project/yugioh-scraper/"><img src="https://img.shields.io/pypi/v/yugioh-scraper"></a>
+    <a href="https://pypi.org/project/yugioh-scraper/"><img src="https://img.shields.io/pypi/dm/yugioh-scraper"></a>
+    <a href="https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/issues"><img src="https://img.shields.io/github/issues/albert-marrero/Yu-Gi-Oh-Scraper"></a>
+    <a href="https://github.com/albert-marrero/Yu-Gi-Oh-Scraper"><img src="https://img.shields.io/github/stars/albert-marrero/Yu-Gi-Oh-Scraper?style=social"></a>
 </p>
 
 Yu-Gi-Oh! Scraper is a project that crawls websites and APIs and extracts Yu-Gi-Oh! related data from their pages.
-
-## Sources
-
-* [Yu-Gi-Oh! Card Database](https://www.db.yugioh-card.com/yugiohdb/?request_locale=en) (`db_yugioghcard`)
-
-### Flowcharts
-
-These flowcharts represent a workflow of each source of the project.
-
-#### Yu-Gi-Oh! Card Database
-
-```mermaid
-graph LR
-    Products(Get All Products)-->RemoveProductDuplicates[[Remove Duplicate Product By Name]]
-    RemoveProductDuplicates-->ProductCard(Get All Cards)
-    ProductCard-->RemoveCardDuplicates[[Remove Duplicate Cards By Name]]
-    RemoveCardDuplicates-->Cards(Get Card Details)
-```
-
-### Entity Relationship Diagrams
-
-These entity–relationship model (or ER model) describes interrelated things of interest of each source of the project.
-
-#### Yu-Gi-Oh! Card Database
-
-```mermaid
-erDiagram
-    PRODUCTS {
-        string product_type
-        string product_name
-        string data_type
-    }
-    PRODUCTS ||--|{ CARDS : contains
-    CARDS {
-        string card_name
-        string card_rarity
-        list card_details
-        string product_name
-        string product_release_date
-        string data_type
-    }
-```
 
 ## Getting Started
 
