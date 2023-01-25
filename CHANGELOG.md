@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Workflow for Dependabot to manage dependencies.
+
 ### Fixed
 
 - Fix unwanted whitespace in the card_details for the Yu-Gi-Oh! Card Database spider.
