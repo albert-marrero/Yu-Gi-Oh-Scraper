@@ -90,7 +90,7 @@ repository](https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/tags).
   - [**Albert Marrero**](https://github.com/albert-marrero) - *Provided Initial Code*
 
 See also the list of
-[contributors](https://github.com/albert-marrero/contributors)
+[contributors]
 who participated in this project.
 
 ## Support
@@ -100,3 +100,5 @@ If you enjoy this repository, please [star](https://docs.github.com/en/get-start
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+[contributors]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/graphs/contributors

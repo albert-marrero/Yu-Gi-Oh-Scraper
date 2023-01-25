@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Broken contributors link.
+
 ## [0.1.1] - 2023-01-20
 
 ### Added 
@@ -15,13 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- Removed Contributing from README.md
+- Removed Contributing from README.md.
 
 ### Fixed
 
 - Workflow to label pull requests based on the files changed.
 - Console Script Command for Yu-Gi-Oh Card Database.
-- Invalid character for file creation for db_yugiohcard spider
+- Invalid character for file creation for db_yugiohcard spider.
 
 ## [0.1.0] - 2023-01-20
 
