@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix unwanted whitespace in the card_details for the Yu-Gi-Oh! Card Database spider.
+
 ## [0.1.2] - 2023-01-25
 
 ### Added
