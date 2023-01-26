@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2023-01-26
+
 ### Added
 
 - Workflow for Dependabot to manage dependencies.
@@ -60,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Workflow to publish a Python Package to PyPL on release.
 - A scraper that crawls the Yu-Gi-Oh! Database to extract product and card details.
 
-[unreleased]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1.1...HEAD
+[unreleased]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.2.0...HEAD
+[0.1.2]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1.2...0.2.0
 [0.1.2]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/albert-marrero/Yu-Gi-Oh-Scraper/compare/0.1-alpha.0...0.1.0
