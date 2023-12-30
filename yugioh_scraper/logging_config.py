@@ -18,7 +18,7 @@ log_config = {
     'handlers': {
         'file_handler': {
             'class': 'logging.handlers.RotatingFileHandler',
-            'level': 'DEBUG',
+            'level': 'INFO',
             'formatter': 'standard',
             'filename': os.path.join(log_folder, 'app.log'),  # Specify the filename
             'maxBytes': 1000000,
@@ -26,7 +26,7 @@ log_config = {
         },
         'console_handler': {
             'class': 'logging.StreamHandler',
-            'level': 'INFO',
+            'level': 'DEBUG',
             'formatter': 'standard',
             'stream': 'ext://sys.stdout',  # Log to stdout (console)
         }

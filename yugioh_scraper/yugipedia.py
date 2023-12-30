@@ -1,12 +1,19 @@
+import yugioh_scraper.config.image
 import yugioh_scraper.logging_config
+
 
 import logging
 import time
+from urllib.parse import quote
 
 import requests
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
+
+# Set Basic Config for Yugipedia
+base_url = 'https://yugipedia.com'
+headers = {'User-agent': 'Mozilla/5.0'}
 
 def scrape_set_categories():
     """
@@ -60,6 +67,8 @@ def scrape_set_categories():
     return set_categories_urls
 
 def scrape_cards(url):
+
+
     """
     Scrape all cards from a set and return a list of card names.
     """
@@ -161,3 +170,112 @@ def scrape_cards(url):
             logger.debug('Recursively calling scrape_cards() with next page URL...')
             scrape_cards(next_page_url)
             logger.debug('Successfully recursively called scrape_cards() with next page URL.')
+
+def get_card_info(card_name: str):
+    """
+    Get a single card's information from Yugipedia by card name.
+    """
+    
+    logger.info('Getting a single card\'s information from Yugipedia by card name...')
+    logger.debug(f'Card name: {card_name}')
+
+    # Set the URL to scrape
+    logger.info(f'Setting card URL...')
+    url = f'{base_url}/wiki/{card_name}'
+    logger.debug(f'Card URL: {url}')
+
+    # Encode the URL
+    logger.info('Encoding the URL...')
+    url = quote(url, safe='/:')
+    logger.debug(f'Encoded URL: {url}')
+
+    # Make a GET request to the URL
+    logger.info('Making a GET request to the URL...')
+    response = requests.get(url, headers=headers)
+
+    # if response is anything other than 200, log an error and raise an exception
+    logger.debug(f'Response status code: {response.status_code}')
+    if response.status_code != 200:
+        logger.error('Response status code was not 200.')
+        raise Exception('Response status code was not 200.')
+    
+    # Parse the HTML response
+    logger.info('Parsing HTML response...')
+    soup = BeautifulSoup(response.content, 'html.parser')
+    logger.debug('Successfully parsed HTML response.')
+
+    # Create empty dictionary to store card info
+    logger.info('Creating empty dictionary to store card info...')
+    card_info = dict()
+    logger.debug(f'Empty dictionary: {card_info}')
+
+    # Finding basic card information found in class of card-table
+    logger.info('Finding basic card information...')
+    card_table = soup.find(class_='card-table')
+
+    # Finding card name found in class of heading
+    logger.info('Finding class of heading in card_table...')
+    card_name_html = card_table.find(class_='heading')
+    card_name = card_name_html.text
+    logger.debug(f'Card name: {card_name}')
+    # Add card name to card info dictionary
+    logger.debug('Adding card name to card info dictionary...')
+    card_info['card_name'] = card_name
+    
+    # Finding card image found in class of imagecolumn
+    logger.info('Finding class of imagecolumn in card_table...')
+    card_image_html = card_table.find(class_='imagecolumn')
+    card_image = card_image_html.find('img')['src']
+    logger.debug(f'Card image: {card_image}')
+    # Add card image to card info dictionary
+    logger.debug('Adding card image to card info dictionary...')
+    card_info['card_image'] = card_image
+
+    # Finding card info found in class of infocolumn
+    logger.info('Finding class of infocolumn in card_table...')
+    card_info_html = card_table.find(class_='infocolumn')
+
+    # Finding all table rows in card info
+    logger.info('Finding all table rows in card info...')
+    card_info_rows = card_info_html.find_all('tr')
+
+    # Loop through each table row and extract the card info
+    for row in card_info_rows:
+        header = row.find('th')
+        # If header is not None, extract the header text
+        if header:
+            # Extract the header text
+            logger.info('Extracting header text...')
+            # Set header to header text
+            header = header.text
+            logger.debug(f'Header: {header}')
+            # Find td in row
+            data = row.find('td')
+            # If data is not None, extract the data text
+            if data:
+                # Extract the data text
+                data = data.text
+                logger.debug(f'Data: {data}')
+
+                # Add card info to card info dictionary
+                logger.debug('Adding card info to card info dictionary...')
+                card_info[header] = data
+
+    logger.info('Successfully found basic card information.')
+
+    logger.debug(f'Card info dictionary: {card_info}')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
